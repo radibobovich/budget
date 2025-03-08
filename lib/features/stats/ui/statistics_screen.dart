@@ -111,11 +111,15 @@ class NoDataPlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        width: context.window.width * 0.7,
-        child: Text(
-          'Недостаточно данных для анализа. Добавьте транзакции.',
-          textAlign: TextAlign.center,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 24),
+        child: SizedBox(
+          width: context.window.width * 0.7,
+          child: Text(
+            'Недостаточно данных для анализа. Добавьте транзакции.',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 18, color: context.colors.secondaryText),
+          ),
         ),
       ),
     );
