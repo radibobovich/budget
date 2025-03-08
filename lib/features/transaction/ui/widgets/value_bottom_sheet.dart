@@ -97,10 +97,11 @@ class ValueBuilder extends StatelessWidget {
         stream: controller.valueFormatted,
         builder: (context, snapshot) {
           final connection = snapshot.connectionState;
+
           if (connection == ConnectionState.active) {
             return builder(context, snapshot.data!);
           }
-          return builder(context, '0');
+          return SizedBox.shrink();
         });
   }
 }
