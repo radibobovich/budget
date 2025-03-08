@@ -22,8 +22,7 @@ class CategorySelectorBottomSheet extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16)
-            ..copyWith(top: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
