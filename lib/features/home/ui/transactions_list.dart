@@ -18,6 +18,7 @@ class TransactionsList extends StatelessWidget {
       elements: transactions,
       groupBy: (item) => item.transaction.date.roundToDayStart,
       order: GroupedListOrder.DESC,
+      itemComparator: _compareTransactionsByDates,
       groupHeaderBuilder: (item) {
         final cashflowForDay = calculator.cashflowForDay(item.transaction.date);
         String cashflowFormatted =
@@ -35,5 +36,13 @@ class TransactionsList extends StatelessWidget {
       },
       separator: SizedBox(height: 12),
     );
+  }
+
+  int _compareTransactionsByDates(t1, t2) {
+    final date1 = t1.transaction.date;
+    final date2 = t2.transaction.date;
+    if (date1.isAfter(date2)) return 1;
+    if (date2.isAfter(date1)) return -1;
+    return 0;
   }
 }
